@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">CollapsingDemo</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <string-array name="mock_items_games">
+        <item>Asteroids</item>
+        <item>Pac-man</item>
+        <item>Space Invaders</item>
+        <item>Donkey Kong</item>
+        <item>Mario Brothers</item>
+        <item>Bomberman</item>
+        <item>Load Runner</item>
+        <item>Twin Bee</item>
+        <item>Ice Climber</item>
+        <item>Metroid</item>
+        <item>Castlevania</item>
+        <item>Legend of Zelda</item>
+        <item>Star Ocean</item>
+        <item>Final Fantasy</item>
+    </string-array>
+</resources>
