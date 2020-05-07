@@ -1,14 +1,11 @@
 package com.example.collapsingdemo
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
-import androidx.viewpager.widget.ViewPager
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
+import androidx.viewpager.widget.ViewPager
 import com.example.collapsingdemo.ui.main.SectionsPagerAdapter
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +16,18 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager = findViewById(R.id.viewPager)
         viewPager.adapter = sectionsPagerAdapter
         val tabs: TabLayout = findViewById(R.id.tabLayout)
+        val cardParent = findViewById<RelativeLayout>(R.id.cardParent)
         tabs.setupWithViewPager(viewPager)
+//        val appBar = findViewById<AppBarLayout>(R.id.appbar)
+//        appBar.addOnOffsetChangedListener(OnOffsetChangedListener { appBarLayout, verticalOffset ->
+//            Log.d("MainActivity","abs(verticalOffset) " + (abs(verticalOffset)).toString())
+//            if (abs(verticalOffset) == appBarLayout.totalScrollRange) {
+//                //  Collapsed
+//                cardParent.visibility = View.GONE
+//            } else {
+//                //Expanded
+//                cardParent.visibility = View.VISIBLE
+//            }
+//        })
     }
 }

@@ -7,6 +7,7 @@
     tools:showIn="@layout/activity_main">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/background_dark"
@@ -40,28 +41,27 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        app:behavior_overlapTop="90dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fillViewport="true"-->
+<!--        android:nestedScrollingEnabled="false">-->
+
 
         <LinearLayout
             android:id="@+id/lin"
             android:nestedScrollingEnabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include layout="@layout/debit_card_item" />
-
-
+            android:orientation="vertical"
+            app:behavior_overlapTop="90dp"
+            app:layout_behavior=".ui.CustomHeaderBehavior">
+            <include layout="@layout/debit_card_item"
+                app:layout_behavior="com.example.collapsingdemo.ui.SpenmoV2HeaderBehavior" />
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                android:layout_marginTop="40dp"
                 android:background="?attr/colorPrimary" />
 
 
@@ -72,7 +72,7 @@
                 android:layout_weight="1" />
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+<!--    </androidx.core.widget.NestedScrollView>-->
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
