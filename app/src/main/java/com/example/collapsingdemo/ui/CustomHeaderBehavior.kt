@@ -46,34 +46,34 @@ class CustomHeaderBehavior : AppBarLayout.ScrollingViewBehavior {
         return super.layoutDependsOn(parent, child, dependency)
     }
 
-    override fun onDependentViewChanged(
-        parent: CoordinatorLayout,
-        childP: View,
-        dependency: View
-    ): Boolean {
-        val child = childP.findViewById<RelativeLayout>(R.id.cardParent)
-        val maxScroll: Int = (dependency as AppBarLayout).totalScrollRange
-        val percentage =
-            abs(dependency.y) / maxScroll.toFloat()
-        Log.d("Behavx","D.y "+abs(dependency.y)+ " m s "+maxScroll+ " p "+percentage)
-        val lp: LinearLayout.LayoutParams =
-            child.layoutParams as LinearLayout.LayoutParams
-        if(firstTime){
-            height = child.height
-            width = child.width
-            marginBottom = lp.bottomMargin
-            firstTime = false
-        }
-        Log.d("Behaviour", "P "+ ((1-(percentage))*100).toString() +" H " +height+ " U H " +(height*(((1-(percentage))*100))/100) )
+//    override fun onDependentViewChanged(
+//        parent: CoordinatorLayout,
+//        childP: View,
+//        dependency: View
+//    ): Boolean {
+//        val child = childP.findViewById<RelativeLayout>(R.id.cardParent)
+//        val maxScroll: Int = (dependency as AppBarLayout).totalScrollRange
+//        val percentage =
+//            abs(dependency.y) / maxScroll.toFloat()
+//        Log.d("Behavx","D.y "+abs(dependency.y)+ " m s "+maxScroll+ " p "+percentage)
+//        val lp: LinearLayout.LayoutParams =
+//            child.layoutParams as LinearLayout.LayoutParams
+//        if(firstTime){
+//            height = child.height
+//            width = child.width
+//            marginBottom = lp.bottomMargin
+//            firstTime = false
+//        }
+//        Log.d("Behaviour", "P "+ ((1-(percentage))*100).toString() +" H " +height+ " U H " +(height*(((1-(percentage))*100))/100) )
 //        lp.bottomMargin = ((marginBottom*(((1-(percentage))*100))/100) - ((height*((((percentage))*100))/100))).toInt()
-        lp.bottomMargin = ((marginBottom*(((1-(percentage))*100))/100)).toInt()
-        lp.height = ((height*(((1-(percentage))*100))/100)).toInt()
+//        lp.bottomMargin = ((marginBottom*(((1-(percentage))*100))/100)).toInt()
+//        lp.height = ((height*(((1-(percentage))*100))/100)).toInt()
 
-        child.layoutParams = lp
-        child.alpha = 1 - (percentage * 4)
-        return super.onDependentViewChanged(parent, childP, dependency)
+//        child.layoutParams = lp
+//        child.alpha = 1 - (percentage * 4)
+//        return super.onDependentViewChanged(parent, childP, dependency)
 
-    }
+//    }
 
 
     companion object {
